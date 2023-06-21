@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>zerothings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="zerothings">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="zerothings">
+    <meta property="og:description" content="zerothings">
+    <meta property="og:url" content="http://zerothings.com/">
+    <meta property="og:image" content="../image/logo.png">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/main.js"></script>
+</head>
+<body>
+    
+    <div id="mask" style="display:none;"></div>
+    <!-- 모바일 네비게이션 -->
+    <nav class="mobile_menu_nav">
+        <div class="mobile_bg">
+            <h2 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h2>
+           
+            <form class="m_search_modal">
+                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+            </form>
+            
+            <ul class="depth1">
+                <li><a href="about.html">ABOUT</a>
+                    <ul class="depth2">
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </li>
+                <li><a href="shop.html">SHOP</a>
+                    <ul class="depth2">
+                        <li><a href="shop.html">BATH</a></li>
+                        <li><a href="shop.html)">KITCHEN</a></li>
+                        <li><a href="shop.html">LIFESTYLE</a></li>
+                        <li><a href="shop.html">VEGAN</a></li>
+                    </ul>
+                </li>
+                <li><a href="library.html">느린도서관</a></li>
+                <li><a href="empty_page.html">B2B</a></li>
+                <li><a href="qna.html">게시판</a>
+                    <ul class="depth2">
+                        <li><a href="qna.html">Q&amp;A</a></li>
+                        <li><a href="faq.html">자주묻는질문</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="mobile_division" onclick="menuClose()"></div>
+    </nav>
+    
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+           <div class="m_menu_btn"><button type="button" class="mobile_menu" onclick="menuOpen()"><span class="blind">메뉴</span></button></div>
+           <h1 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h1>
+            <nav class="menu">
+                <ul class="depth1">
+                    <li><a href="about.html">ABOUT</a>
+                        <ul class="depth2">
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html">SHOP</a>
+                        <ul class="depth2">
+                            <li><a href="shop.html">BATH</a></li>
+                            <li><a href="shop.html">KITCHEN</a></li>
+                            <li><a href="shop.html">LIFESTYLE</a></li>
+                            <li><a href="shop.html">GIFT SET</a></li>
+                            <li><a href="shop.html">VEGAN</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="library.html">느린도서관</a></li>
+                    <li><a href="empty_page.html">B2B</a></li>
+                    <li><a href="qna.html">게시판</a>
+                        <ul class="depth2">
+                            <li><a href="qna.html">Q&amp;A</a></li>
+                            <li><a href="faq.html">자주묻는질문</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="customer_service">
+                    <li>
+                        <button type="button" class="service search" onclick="searchToggle()"><span class="blind">검색버튼</span></button>
+                        <div class="search_modal" id="searchBox">
+                            <form>
+                                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="login.html" class="service user"><span class="blind">사용자</span></a></li>
+                    <li><a href="cart.html" class="service cart"><span class="blind">장바구니</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main_content">
+        <section class="visual" id="slider">
+            <h2 class="blind">비주얼</h2>
+            
+            <button type="button" class="control_next"><span class="blind">다음버튼</span>NEXT</button>
+            <button type="button" class="control_prev"><span class="blind">이전버튼</span>PREV </button>
+            
+            <div class="slide_box">
+                <a href="shop.html" class="slide_content slide01">
+                    <picture>
+                        <source media="(max-width: 414px)" srcset="../image/main/visual_1_m.jpg">
+                        <source media="(max-width: 768px)" srcset="../image/main/visual_1_t.jpg">
+                        <source media="(min-width: 769px)" srcset="../image/main/visual_1.jpg">
+                        <img src="../image/main/visual_1.jpg" alt="비주얼이미지1" />
+                    </picture>
+                </a>
+                <a href="shop.html" class="slide_content slide02">
+                    <picture>
+                        <source media="(max-width: 414px)" srcset="../image/main/visual_2_m.jpg">
+                        <source media="(max-width: 768px)" srcset="../image/main/visual_2_t.jpg">
+                        <source media="(min-width: 769px)" srcset="../image/main/visual_2.jpg">
+                        <img src="../image/main/visual_2.jpg" alt="비주얼이미지2" />
+                    </picture>
+                </a>
+                <a href="shop.html" class="slide_content slide03">
+                    <picture>
+                        <source media="(max-width: 414px)" srcset="../image/main/visual_3_m.jpg">
+                        <source media="(max-width: 768px)" srcset="../image/main/visual_3_t.jpg">
+                        <source media="(min-width: 769px)" srcset="../image/main/visual_3.jpg">
+                        <img src="../image/main/visual_3.jpg" alt="비주얼이미지3" />
+                    </picture>
+                </a>
+            </div>
+        </section>
+        
+        <section class="section product_layout best_seller">
+            <h2 class="h2_title mb40">BEST SELLER</h2>
+           
+            <div class="container">
+                <div class="left_categories">
+                    <ul class="categories">
+                        <li><button type="button" class="active" id="main_seller_tab_0">NEW</button></li>
+                        <li><button type="button" id="main_seller_tab_1">KIT</button></li>
+                    </ul>
+                </div>
+                
+                <ul class="product_list grid item_4" id="main_seller_con_0">
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_01.jpg" alt="씨드키퍼1" /><img src="../image/new/img_01_1.jpg" alt="씨드키퍼1_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 컬러 메디테이션 씨앗키트 식물키우기</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_02.jpg" alt="씨드키퍼2" /><img src="../image/new/img_02_1.jpg" alt="씨드키퍼2_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 아로마테라피 씨앗키트 식물키우기</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_03.jpg" alt="씨드키퍼3" /><img src="../image/new/img_03_1.jpg" alt="씨드키퍼3_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 빈 패밀리 씨앗키트 콩키우기</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_04.jpg" alt="씨드키퍼4" /><img src="../image/new/img_04_1.jpg" alt="씨드키퍼4_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 키친스파이스 씨앗키트 식물키우기</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_05.jpg" alt="씨드키퍼5" /><img src="../image/new/img_05_1.jpg" alt="씨드키퍼5_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 노 스트레스 티 씨앗키트 No Stress Tea Seedkit</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_06.jpg" alt="씨드키퍼6" /><img src="../image/new/img_06_1.jpg" alt="씨드키퍼6_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 그린샐러드 씨앗키트 Green Salad Seedkit</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_07.jpg" alt="수제쑥차" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[ACOH] 어리쑥차_봄 향기 가득한 수제 쑥차</p>
+                                <strong class="product_price">11,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_08.jpg" alt="엽서" /><img src="../image/new/img_08_1.jpg" alt="엽서" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[피팔레트] p.palette 토끼 미니 엽서 2종</p>
+                                <strong class="product_price">1,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_09.jpeg" alt="수세미" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[제로띵스] 천연 압축 수세미 (물방울)</p>
+                                <strong class="product_price"><del>3,000원</del>2,700원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_10.jpg" alt="연필" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[제로띵스] 커피박 연필</p>
+                                <strong class="product_price">3,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                
+                <ul class="product_list grid item_4" id="main_seller_con_1" style="display:none;">
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kit/img_01.jpg" alt="키트1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[제로웨이스트키트] 설거지비누+천연수세미 주방세트 A,B (친환경 선물세트)</p>
+                                <strong class="product_price"><del>10,400원</del>9,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kit/img_02.jpg" alt="키트2" /><img src="../image/kit/img_02_1.jpg" alt="키트2_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[제로웨이스트키트] For Kitchen (주방용) 키트_선물세트</p>
+                                <strong class="product_price"><del>11,000원</del>9,700원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kit/img_03.jpg" alt="키트3" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[제로웨이스트키트] 친환경 문구용품 세트</p>
+                                <strong class="product_price"><del>17,000원</del>16,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kit/img_04.jpg" alt="기프트세트1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[Gift Set] 크리스마스 제로웨이스트 키트</p>
+                                <strong class="product_price"><del>31,100원</del>28,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kit/img_05.jpg" alt="키트4" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[제로웨이스트 키트] 여행용 트래블 키트</p>
+                                <strong class="product_price"><del>48,800원</del>44,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kit/img_06.jpg" alt="키트5" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[제로웨이스트 키트] 다회용 빨대 SET (유리,스텐빨대/파우치/세척솔)</p>
+                                <strong class="product_price">9,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kit/img_07.jpg" alt="키트6" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[제로띵스 PICK] 시원한 SET</p>
+                                <strong class="product_price"><del>28,300원</del>26,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section pd_bottom product_layout group_seller">
+            <div class="container">
+                <h2 class="blind">product</h2>
+                
+                <div class="left_categories">
+                    <ul class="categories">
+                        <li><button type="button" id="main_group_tab_0" class="active">BATH</button></li>
+                        <li><button type="button" id="main_group_tab_1">KITCHEN</button></li>
+                        <li><button type="button" id="main_group_tab_2">LIFESTYLE</button></li>
+                    </ul>
+                </div>
+                
+                <ul class="product_list grid item_4" id="main_group_con_0">
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_01.jpg" alt="비누1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[지구샵] 자몽 올인원 온몸비누 미니/휴대용</p>
+                                <strong class="product_price">2,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_02.jpg" alt="비누2" /><img src="../image/bath/img_02_1.jpg" alt="비누2_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[아로마티카] 서렌바디바 라벤더 & 버가못 바디비누</p>
+                                <strong class="product_price">25,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_03.jpg" alt="칫솔1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[조르단] 그린클린 체인지 칫솔 (+ 2 Refills)</p>
+                                <strong class="product_price">6,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_04.jpg" alt="비누3" /><img src="../image/bath/img_04_1.jpg" alt="비누3_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[아로마티카] 로즈마리 헤어 씨크닝 컨디셔너 바</p>
+                                <strong class="product_price">22,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_05.jpg" alt="비누4" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[아로마티카] 로즈마리 스칼프 스케일링 샴푸바 135g_고체샴푸</p>
+                                <strong class="product_price">30,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_06.jpg" alt="칫솔2" /><img src="../image/bath/img_06_1.jpg" alt="칫솔2_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[아로마티카] 제로웨이스트 대나무 칫솔 10개입</p>
+                                <strong class="product_price">20,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_07.jpg" alt="비누5" /><img src="../image/bath/img_07_1.jpg" alt="비누5_1" /><span class="state small gray">품절</span></span>
+                            <div class="text_box">
+                                <p class="product_name">[아렌시아] 나이트 섀도우 샴푸바_지성,약한 모발_샌달우드 앤 머스크향</p>
+                                <strong class="product_price">13,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_08.jpg" alt="샴푸1" /><img src="../image/bath/img_08_1.jpg" alt="샴푸1_1" /><span class="state small gray">품절</span></span>
+                            <div class="text_box">
+                                <p class="product_name">[톤28] S18 샴푸바 다시마추출물 100g (중/지성) 약산성 비건샴푸</p>
+                                <strong class="product_price">11,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_09.jpg" alt="타올1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[예고은] 천연 삼베샤워타올/때타올</p>
+                                <strong class="product_price">14,400원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_10.jpg" alt="화장솜1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[컨액션] 코튼 100% 재사용 화장솜 (5pcs)</p>
+                                <strong class="product_price">7,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_11.jpg" alt="치약짜개" /><img src="../image/bath/img_11_1.jpg" alt="치약짜개1_1" /><span class="state small orange">BEST</span></span>
+                            <div class="text_box">
+                                <p class="product_name">[노플라스틱선데이] 업사이클링 튜브 짜개 치약짜개</p>
+                                <strong class="product_price">4,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_12.jpg" alt="치약1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[1950] 제주 미니 오가닉 치약 30g</p>
+                                <strong class="product_price">3,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_13.jpg" alt="치약2" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[디어얼스] 고체치약 40정</p>
+                                <strong class="product_price">7,700원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_14.jpg" alt="립밤" /><img src="../image/bath/img_14_1.jpg" alt="립밤1_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[톤28] 입술 바를거리 비건 립밤 (바닐라향/무향)</p>
+                                <strong class="product_price">9,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/bath/img_15.jpg" alt="파우치" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[제로띵스] 다회용 빨대,칫솔 파우치 (코튼,린넨 2종)</p>
+                                <strong class="product_price">3,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                
+                <ul class="product_list grid item_4" id="main_group_con_1" style="display:none;" >
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_01.jpg" alt="비누1" /><img src="../image/kitchen/img_01_1.jpg" alt="비누1_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[소미지] 친환경 설거지 비누 선물 200g</p>
+                                <strong class="product_price">5,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_02.jpg" alt="브러쉬1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[소렉스] 베지터블 브러쉬 44610 야채 과일 세척</p>
+                                <strong class="product_price">8,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_03.jpg" alt="행주" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[MEIKO] 독일 천연 체크키친크로스 행주</p>
+                                <strong class="product_price">9,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_04.jpg" alt="비누3" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[이크] eeeek 실리콘 아기 투약병 20cc _3개입</p>
+                                <strong class="product_price">15,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_05.jpg" alt="식탁매트1" /><img src="../image/kitchen/img_05_1.jpg" alt="식탁매트1_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[리빈그리닌] 샤베트 체크 키친 크로스_행주 테이블매트</p>
+                                <strong class="product_price">8,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_06.jpg" alt="식탁매트2" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[리빈그리닌] 하트체인 키친크로스_행주 식탁매트</p>
+                                <strong class="product_price">8,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_07.jpg" alt="텀블러1" /><img src="../image/kitchen/img_07_1.jpg" alt="텀블러1_1" /><span class="state small orange">BEST</span></span>
+                            <div class="text_box">
+                                <p class="product_name">[HUSKEE] 허스키컵 8온스 (240ml) 내추럴/차콜</p>
+                                <strong class="product_price">19,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_08.jpg" alt="텀블러2" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[스카이폴리오] 스토조 접이식텀블러 3종</p>
+                                <strong class="product_price">28,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_09.jpg" alt="스푼1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[스카이폴리오] 느티나무 우드스푼 (종이박스 포장)</p>
+                                <strong class="product_price">12,400원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_10.jpg" alt="행주1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[컨액션] 복지아동 친환경 자수 소창행주 (핸드타올 겸용)</p>
+                                <strong class="product_price">12,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_11.jpg" alt="손수건" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[소락] 휴대용와입스/손수건_ 옥스포드 디스펜서세트</p>
+                                <strong class="product_price">13,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_12.jpg" alt="텀블러백" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[p.palette] 피팔레트 네트 텀블러백</p>
+                                <strong class="product_price">7,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_13.jpg" alt="수저파우치" /><img src="../image/kitchen/img_13_1.jpg" alt="수저파우치1_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[슬로우패브릭에코] 패브릭 스푼백_제로웨이스트 다용도 수저파우치</p>
+                                <strong class="product_price">15,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_14.jpg" alt="코스터" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[리빈그리닌] 체커보드 코스터 4종</p>
+                                <strong class="product_price">5,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/kitchen/img_15.jpg" alt="티백" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[소락] 소창 삼각 티백</p>
+                                <strong class="product_price">3,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                
+                <ul class="product_list grid item_4" id="main_group_con_2" style="display:none;">
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_01.jpg" alt="씨드키퍼1" /><img src="../image/new/img_01_1.jpg" alt="씨드키퍼1_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 컬러 메디테이션 씨앗키트 식물키우기</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_02.jpg" alt="씨드키퍼2" /><img src="../image/new/img_02_1.jpg" alt="씨드키퍼2_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 아로마테라피 씨앗키트 식물키우기</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_03.jpg" alt="씨드키퍼3" /><img src="../image/new/img_03_1.jpg" alt="씨드키퍼3_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 빈 패밀리 씨앗키트 콩키우기</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_04.jpg" alt="씨드키퍼4" /><img src="../image/new/img_04_1.jpg" alt="씨드키퍼4_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 키친스파이스 씨앗키트 식물키우기</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_05.jpg" alt="씨드키퍼5" /><img src="../image/new/img_05_1.jpg" alt="씨드키퍼5_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 노 스트레스 티 씨앗키트 No Stress Tea Seedkit</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/new/img_06.jpg" alt="씨드키퍼6" /><img src="../image/new/img_06_1.jpg" alt="씨드키퍼6_상세" /></span>
+                            <div class="text_box">
+                                <p class="product_name">*Renewal* [씨드키퍼] 그린샐러드 씨앗키트 Green Salad Seedkit</p>
+                                <strong class="product_price">17,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/liftstyle/img_01.jpg" alt="노트" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[올댓페이퍼] 친환경 노트 2종</p>
+                                <strong class="product_price">8,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/liftstyle/img_02.jpg" alt="텀블러홀더백" /><img src="../image/liftstyle/img_02_1.jpg" alt="텀블러홀더백1_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[피팔레트] 뽀글이 텀블러 홀더백</p>
+                                <strong class="product_price">11,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/liftstyle/img_03.jpg" alt="곱창밴드" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[피팔레트] 업사이클링 오가닉 스크런치 머리곱창밴드</p>
+                                <strong class="product_price">4,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/liftstyle/img_04.jpg" alt="인센스홀더" /><img src="../image/liftstyle/img_04_1.jpg" alt="인센스홀더1_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[차곡] 조개 세라믹 인센스 홀더</p>
+                                <strong class="product_price">12,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/liftstyle/img_05.jpg" alt="노트" /><img src="../image/liftstyle/img_05_1.jpg" alt="노트1_1" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[컨액션] 뉴사이클링 노트_을지로 프로젝트 / 한정수량</p>
+                                <strong class="product_price">25,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/liftstyle/img_06.jpg" alt="에코백" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[p.palette] 피팔레트 라이트브라운 에코백 Light brown bag</p>
+                                <strong class="product_price">18,000원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/liftstyle/img_07.jpg" alt="노트2" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[슬립타이트오브젝트] 시그니처 노트 night night note - blue</p>
+                                <strong class="product_price">11,500원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/liftstyle/img_08.jpg" alt="북마크" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[어느한장면] Bunny&Bunny 레터프레스 북마크 책갈피</p>
+                                <strong class="product_price">5,900원</strong>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product.html">
+                            <span class="img_box"><img src="../image/liftstyle/img_09.jpg" alt="마스킹테이프" /></span>
+                            <div class="text_box">
+                                <p class="product_name">[노메르] +33 프렌치 스트리트 마스킹테이프 15mm (종이포장)</p>
+                                <strong class="product_price">4,300원</strong>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section pd_bottom main_about">
+            <h2 class="h2_title mb40">ABOUT</h2>
+            <div class="container introduction">
+                <div class="left_box">
+                    <div class="text_box">
+                        <h3 class="title">일상에 스며든 녹색 소비</h3>
+                        <p class="text">제로띵스는 버려지는 것들을 최소화하기 위해 노력하는 친환경 샵이자, 개개인의 행복하고 풍족한 삶을 지향하는 리빙샵입니다.</p>
+                        <a href="about.html" class="move">소개페이지 이동하기</a>
+                    </div>
+                    <div class="img_box"><img src="../image/visual_02.jpg" alt="녹색소비" /></div>
+                </div>
+                
+                <div class="right_box">
+                    <div class="img_box"><img src="../image/visual_03.jpg" alt="목표" /></div>
+                    <div class="text_box">
+                        <h3 class="title">제로띵스의 목표</h3>
+                        <p class="text">일상 속에서 즐거운 마음으로 가볍게 실천할 수 있는 제로웨이트 라이프를 넌지시 건네는 것이 제로띵스의 목표입니다.</p>
+                        <a href="https://blog.naver.com/zerothings_shop" class="move">블로그 방문하기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <h2 class="h2_title mb40">INSTAGRAM<br/><a href="https://www.instagram.com/zerothings_shop/" target="_blank" class="instagram_id mb40">@zerothings_shop</a></h2>
+            
+                <ul class="insta_list grid item_4">
+                    <li>
+                        <a href="https://www.instagram.com/p/Crh0FYHJwei/" target="_blank" class="img_box"><img src="../image/main/insta_01.jpg" alt="인스타01" /></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/p/Crh0FYHJwei/" target="_blank" class="img_box"><img src="../image/main/insta_02.jpg" alt="인스타02" /></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/p/Crh0FYHJwei/" target="_blank" class="img_box"><img src="../image/main/insta_03.jpg" alt="인스타03" /></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/p/Crh0FYHJwei/" target="_blank" class="img_box"><img src="../image/main/insta_04.jpg" alt="인스타04" /></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/p/Crh0FYHJwei/" target="_blank" class="img_box"><img src="../image/main/insta_05.jpg" alt="인스타05" /></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/p/Crh0FYHJwei/" target="_blank" class="img_box"><img src="../image/main/insta_06.jpg" alt="인스타06" /></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/p/Crh0FYHJwei/" target="_blank" class="img_box"><img src="../image/main/insta_07.jpg" alt="인스타07" /></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/p/Crh0FYHJwei/" target="_blank" class="img_box"><img src="../image/main/insta_08.jpg" alt="인스타08" /></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section pd_bottom">
+            <div class="container grid">
+                <div class="contact">
+                    <h2 class="title">CONTACT</h2>
+                    <strong class="text">02-2263-6148</strong>
+                    <p class="txt">화~토요일 12:00 - 19:30</p>
+                    <p class="txt">일 12:00 - 18:00</p><br/>
+                    <p class="txt">문의는 전화, 네이버톡톡,  Q&#38;A 게시판 이용 부탁드립니다.</p>
+                    <p class="txt">B2B 사업자 회원 신청은 홈페이지 회원가입 후 게시판 공지글을 참고해주세요 :)</p>
+                </div>
+                
+                <div class="contact">
+                    <h2 class="title">BANK ACCOUNT</h2>
+                    <strong class="text">국민 414301-01-173202</strong>
+                    <p class="txt">예금주: 이윤주(제로띵스)</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <button type="button" class="up_btn" id="upBtn" onclick="upMove()"><span class="blind">상단이동</span>TOP</button>
+    
+    <footer class="footer">
+        <div class="container">
+            <ul class="company_info">
+                <li>상호: 제로띵스</li>
+                <li>대표: 이윤주</li>
+                <li>개인정보관리책임자: 이윤주</li>
+                <li>전화: 02-2263-6148</li>
+                <li>이메일: zerothings_shop@naver.com</li>
+                <li>주소: 서울 중구 수표로 32-1, 3층 제로띵스</li>
+                <li>사업자등록번호: 126-55-00563</li>
+                <li>통신판매: 제 2021-서울중구-1313 호</li>
+                <li>호스팅제공자: (주)식스샵</li>
+            </ul>
+            
+            <ul class="site_element">
+                <li><a href="javascript:void(0)">안전구매(에스크로) 서비스 가맹점</a></li>
+                <li><a href="javascript:void(0)">이용약관</a></li>
+                <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+                <li><a href="javascript:void(0)">사업자정보확인</a></li>
+            </ul>
+            
+            <ul class="sns_list">
+                <li><a href="javascript:void(0)" class="tel"><span class="blind">전화</span></a></li>
+                <li><a href="javascript:void(0)" class="mail"><span class="blind">메일</span></a></li>
+                <li><a href="javascript:void(0)" class="instagram"><span class="blind">인스타그램</span></a></li>
+                <li><a href="javascript:void(0)" class="blog"><span class="blind">블로그</span></a></li>
+            </ul>
+        </div>
+    </footer>

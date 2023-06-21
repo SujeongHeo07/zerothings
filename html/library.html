@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>zerothings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="zerothings">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="zerothings">
+    <meta property="og:description" content="zerothings">
+    <meta property="og:url" content="http://zerothings.com/">
+    <meta property="og:image" content="../image/logo.png">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/sub.css" />
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+<body>
+    
+    <div id="mask" style="display:none;"></div>
+    <!-- 모바일 네비게이션 -->
+    <nav class="mobile_menu_nav">
+        <div class="mobile_bg">
+            <h2 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h2>
+           
+            <form class="m_search_modal">
+                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+            </form>
+            
+            <ul class="depth1">
+                <li><a href="about.html">ABOUT</a>
+                    <ul class="depth2">
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </li>
+                <li><a href="shop.html">SHOP</a>
+                    <ul class="depth2">
+                        <li><a href="shop.html">BATH</a></li>
+                        <li><a href="shop.html)">KITCHEN</a></li>
+                        <li><a href="shop.html">LIFESTYLE</a></li>
+                        <li><a href="shop.html">VEGAN</a></li>
+                    </ul>
+                </li>
+                <li><a href="library.html">느린도서관</a></li>
+                <li><a href="empty_page.html">B2B</a></li>
+                <li><a href="qna.html">게시판</a>
+                    <ul class="depth2">
+                        <li><a href="qna.html">Q&amp;A</a></li>
+                        <li><a href="faq.html">자주묻는질문</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="mobile_division" onclick="menuClose()"></div>
+    </nav>
+    
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+           <div class="m_menu_btn"><button type="button" class="mobile_menu" onclick="menuOpen()"><span class="blind">메뉴</span></button></div>
+           <h1 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h1>
+            <nav class="menu">
+                <ul class="depth1">
+                    <li><a href="about.html">ABOUT</a>
+                        <ul class="depth2">
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html">SHOP</a>
+                        <ul class="depth2">
+                            <li><a href="shop.html">BATH</a></li>
+                            <li><a href="shop.html">KITCHEN</a></li>
+                            <li><a href="shop.html">LIFESTYLE</a></li>
+                            <li><a href="shop.html">GIFT SET</a></li>
+                            <li><a href="shop.html">VEGAN</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="library.html">느린도서관</a></li>
+                    <li><a href="empty_page.html">B2B</a></li>
+                    <li><a href="qna.html">게시판</a>
+                        <ul class="depth2">
+                            <li><a href="qna.html">Q&amp;A</a></li>
+                            <li><a href="faq.html">자주묻는질문</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="customer_service">
+                    <li>
+                        <button type="button" class="service search" onclick="searchToggle()"><span class="blind">검색버튼</span></button>
+                        <div class="search_modal" id="searchBox">
+                            <form>
+                                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="login.html" class="service user"><span class="blind">사용자</span></a></li>
+                    <li><a href="cart.html" class="service cart"><span class="blind">장바구니</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main_content">
+        
+        <section class="section_top pd_bottom">
+            
+            <div class="container">
+                <h2 class="h2_title mb20"><img src="../image/sub/library_banner.jpg" alt="느린도서관" class="library_img" /></h2>
+                <p class="desc">
+                    <strong class="point_txt">느린도서관</strong>은 제로띵스에서 운영하는 작은 도서관입니다.<br/>
+                    제로웨이스트 관련 책 뿐만 아니라 <br/>
+                    삶을 좀 더 행복하고 건강하게 유지하는데 도움이 되는 책들을 대여할 수 있습니다.<br/>
+                    <strong class="point_txt">대여기간은 45일</strong>로 여유를 가진 독서 후 반납해주세요.
+                </p>
+               
+                <ul class="product_list grid item_3">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box">
+                               <img src="../image/book/img_01.jpg" alt="책1" />
+                                <span class="state gray">대여중</span>
+                            </span>
+                            <div class="text_box">
+                                <p class="product_name">줄이는 삶을 시작했습니다</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box">
+                                <img src="../image/book/img_02.jpg" alt="책2" />
+                                <span class="state gray">대여중</span>
+                            </span>
+                            <div class="text_box">
+                                <p class="product_name">그건 쓰레기가 아니라고요</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box"><img src="../image/book/img_03.jpg" alt="책3" /></span>
+                            <div class="text_box">
+                                <p class="product_name">잘 버리면 살아나요 - 지구를 구하는 분리배출 생활을 위한 50가지 질문</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box"><img src="../image/book/img_04.jpg" alt="책4" /></span>
+                            <div class="text_box">
+                                <p class="product_name">슬로뷰티, 삶을 바꾸는 비건화장</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box"><img src="../image/book/img_05.jpg" alt="책5" /></span>
+                            <div class="text_box">
+                                <p class="product_name">어쩌면 당신의 가방은 무거워질 수 있겠지만</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box"><img src="../image/book/img_06.jpg" alt="책6" /></span>
+                            <div class="text_box">
+                                <p class="product_name">파타고니아, 파도가 칠 때는 서핑을</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box"><img src="../image/book/img_07.jpg" alt="책7" /></span>
+                            <div class="text_box">
+                                <p class="product_name">그러니까, 친환경이 뭔가요?</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box"><img src="../image/book/img_08.jpg" alt="책8" /></span>
+                            <div class="text_box">
+                                <p class="product_name">Zero Waste Home (영어원서)</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box"><img src="../image/book/img_09.jpg" alt="책9" /></span>
+                            <div class="text_box">
+                                <p class="product_name">랩걸</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="img_box"><img src="../image/book/img_10.jpg" alt="책10" /></span>
+                            <div class="text_box">
+                                <p class="product_name">세상에 무해한 사람이 되고 싶어</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+             
+            </div>
+        </section>
+
+    </main>
+    
+    <button type="button" class="up_btn" id="upBtn" onclick="upMove()"><span class="blind">상단이동</span>TOP</button>
+    
+    <footer class="footer">
+        <div class="container">
+            <ul class="company_info">
+                <li>상호: 제로띵스</li>
+                <li>대표: 이윤주</li>
+                <li>개인정보관리책임자: 이윤주</li>
+                <li>전화: 02-2263-6148</li>
+                <li>이메일: zerothings_shop@naver.com</li>
+                <li>주소: 서울 중구 수표로 32-1, 3층 제로띵스</li>
+                <li>사업자등록번호: 126-55-00563</li>
+                <li>통신판매: 제 2021-서울중구-1313 호</li>
+                <li>호스팅제공자: (주)식스샵</li>
+            </ul>
+            
+            <ul class="site_element">
+                <li><a href="javascript:void(0)">안전구매(에스크로) 서비스 가맹점</a></li>
+                <li><a href="javascript:void(0)">이용약관</a></li>
+                <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+                <li><a href="javascript:void(0)">사업자정보확인</a></li>
+            </ul>
+            
+            <ul class="sns_list">
+                <li><a href="javascript:void(0)" class="tel"><span class="blind">전화</span></a></li>
+                <li><a href="javascript:void(0)" class="mail"><span class="blind">메일</span></a></li>
+                <li><a href="javascript:void(0)" class="instagram"><span class="blind">인스타그램</span></a></li>
+                <li><a href="javascript:void(0)" class="blog"><span class="blind">블로그</span></a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>

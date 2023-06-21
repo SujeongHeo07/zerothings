@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>zerothings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="zerothings">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="zerothings">
+    <meta property="og:description" content="zerothings">
+    <meta property="og:url" content="http://zerothings.com/">
+    <meta property="og:image" content="../image/logo.png">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/sub.css" />
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script type="text/javascript">
+        // faq
+        function qnaShow(obj) {
+            $(".faq_list .faq_tit").removeClass("open");
+            $(".faq_list").find(".text_box").slideUp();
+            $(obj).toggleClass("open");
+            $(obj).siblings(".text_box").stop().slideToggle();
+        }
+    </script>
+</head>
+<body>
+    
+    <div id="mask" style="display:none;"></div>
+    <!-- 모바일 네비게이션 -->
+    <nav class="mobile_menu_nav">
+        <div class="mobile_bg">
+            <h2 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h2>
+           
+            <form class="m_search_modal">
+                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+            </form>
+            
+            <ul class="depth1">
+                <li><a href="about.html">ABOUT</a>
+                    <ul class="depth2">
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </li>
+                <li><a href="shop.html">SHOP</a>
+                    <ul class="depth2">
+                        <li><a href="shop.html">BATH</a></li>
+                        <li><a href="shop.html)">KITCHEN</a></li>
+                        <li><a href="shop.html">LIFESTYLE</a></li>
+                        <li><a href="shop.html">VEGAN</a></li>
+                    </ul>
+                </li>
+                <li><a href="library.html">느린도서관</a></li>
+                <li><a href="empty_page.html">B2B</a></li>
+                <li><a href="qna.html">게시판</a>
+                    <ul class="depth2">
+                        <li><a href="qna.html">Q&amp;A</a></li>
+                        <li><a href="faq.html">자주묻는질문</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="mobile_division" onclick="menuClose()"></div>
+    </nav>
+    
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+           <div class="m_menu_btn"><button type="button" class="mobile_menu" onclick="menuOpen()"><span class="blind">메뉴</span></button></div>
+           <h1 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h1>
+            <nav class="menu">
+                <ul class="depth1">
+                    <li><a href="about.html">ABOUT</a>
+                        <ul class="depth2">
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html">SHOP</a>
+                        <ul class="depth2">
+                            <li><a href="shop.html">BATH</a></li>
+                            <li><a href="shop.html">KITCHEN</a></li>
+                            <li><a href="shop.html">LIFESTYLE</a></li>
+                            <li><a href="shop.html">GIFT SET</a></li>
+                            <li><a href="shop.html">VEGAN</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="library.html">느린도서관</a></li>
+                    <li><a href="empty_page.html">B2B</a></li>
+                    <li><a href="qna.html">게시판</a>
+                        <ul class="depth2">
+                            <li><a href="qna.html">Q&amp;A</a></li>
+                            <li><a href="faq.html">자주묻는질문</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="customer_service">
+                    <li>
+                        <button type="button" class="service search" onclick="searchToggle()"><span class="blind">검색버튼</span></button>
+                        <div class="search_modal" id="searchBox">
+                            <form>
+                                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="login.html" class="service user"><span class="blind">사용자</span></a></li>
+                    <li><a href="cart.html" class="service cart"><span class="blind">장바구니</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main_content">
+        
+        <section class="section_top pd_bottom">
+            
+            <h2 class="h2_title mb20">자주묻는질문</h2>
+            
+            <div class="container">
+                <form class="search_box">
+                    <input type="search" class="search_text" name="faq_search" title="faq_search" />
+                    <button type="button" class="search_btn"><span class="blind">검색버튼</span></button>
+                </form>
+                
+                <ul class="faq_list">
+                    <li>
+                        <button type="button" class="faq_tit" onclick="qnaShow(this)">Q. 고객센터의 상담 시간을 알고 싶어요.</button>
+                        <div class="text_box">
+                            - 고객센터 전화번호 : 1544-9180<br/>
+                            - 상담 시간 : 평일 오전 9시 30분 ~ 오후 6시 (점심시간 : 오전 11시 30분 ~ 오후 1시 30분 / 주말, 공휴일 휴무)<br/>
+                            - 전화 연결이 어려운 경우 카카오 상담톡으로 문의를 남겨주시면 확인 후 정성껏 답변드리겠습니다.<br/>
+                            ※ 문의량이 많을 경우 상담 연결 및 답변이 지연될 수 있습니다
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button" class="faq_tit" onclick="qnaShow(this)">Q. 배송은 언제 되나요?</button>
+                        <div class="text_box">
+                            - 영업일 기준 오후 1시 이전 결제 완료 주문건 :  당일 출고됩니다. (일부 상품 제외)<br/>
+                            - 공휴일의 경우 다음 영업일에 출고됩니다.<br/>
+                            (출고된 경우 서울/수도권 지역은 대부분 다음날 수령, 지방은 1~3일 이내에 배송됩니다. 따라서 전체 배송 기간은 (업무일 기준) 3일~7일 정도 소요되며, 일부 택배사 사정에 따라 변동될 수 있습니다.)<br/>
+                            ※ 주문 상품이 재고 부족일 경우 부득이하게 배송 시간은 달라질 수 있는 점 양해 부탁드립니다.
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button" class="faq_tit" onclick="qnaShow(this)">Q. 교환/반품시 배송비는 어떻게 되나요?</button>
+                        <div class="text_box">
+                            - 단순 변심으로 인한 교환/환불 시 왕복 배송비 발생 됩니다.<br/>
+                            - 제품 불량으로 인한 교환/환불 시 배송비는 발생되지 않습니다.<br/>
+                            - 교환으로 인한 차액 발생시 구매하신 쇼핑몰 또는 카카오 상담톡으로 문의주시면 도와드리겠습니다.
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button" class="faq_tit" onclick="qnaShow(this)">Q. 비회원으로 주문이 가능한가요?</button>
+                        <div class="text_box">
+                            - 회원가입 없이 [비회원 구매] 버튼을 선택하여 주문이 가능합니다.<br/>
+                            - 비회원으로 주문시 주문 내용을 확인을 위해 '주문번호'와 '비밀번호'를 꼭 메모 부탁드립니다.<br/>
+                            - 주문번호를 잊으신 경우에는 고객센터(1544-9180)으로 연락 부탁드립니다.
+                        </div>
+                    </li>
+                    <li>
+                        <button type="button" class="faq_tit" onclick="qnaShow(this)">Q. 비회원 주문시 취소 및 변경은 어떻게 하나요?</button>
+                        <div class="text_box">
+                            - 비회원 주문의 경우 직접 취소 및 주문서 변경 처리가 어렵습니다.<br/>
+                            - 비회원 or 네이버 로그인으로 주문 후 취소/변경 및 교환/반품을 원하실 경우,
+                              고객센터(1544-9180)로 주문자이름 , 휴대폰번호, 요청 내용과 함께 문의주시면 도와드리겠습니다.<br/>
+                            - 단, 이미 제품이 발송된 경우에는 주문 취소가 불가합니다.
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+        </section>
+
+    </main>
+    
+    <button type="button" class="up_btn" id="upBtn" onclick="upMove()"><span class="blind">상단이동</span>TOP</button>
+    
+    <footer class="footer">
+        <div class="container">
+            <ul class="company_info">
+                <li>상호: 제로띵스</li>
+                <li>대표: 이윤주</li>
+                <li>개인정보관리책임자: 이윤주</li>
+                <li>전화: 02-2263-6148</li>
+                <li>이메일: zerothings_shop@naver.com</li>
+                <li>주소: 서울 중구 수표로 32-1, 3층 제로띵스</li>
+                <li>사업자등록번호: 126-55-00563</li>
+                <li>통신판매: 제 2021-서울중구-1313 호</li>
+                <li>호스팅제공자: (주)식스샵</li>
+            </ul>
+            
+            <ul class="site_element">
+                <li><a href="javascript:void(0)">안전구매(에스크로) 서비스 가맹점</a></li>
+                <li><a href="javascript:void(0)">이용약관</a></li>
+                <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+                <li><a href="javascript:void(0)">사업자정보확인</a></li>
+            </ul>
+            
+            <ul class="sns_list">
+                <li><a href="javascript:void(0)" class="tel"><span class="blind">전화</span></a></li>
+                <li><a href="javascript:void(0)" class="mail"><span class="blind">메일</span></a></li>
+                <li><a href="javascript:void(0)" class="instagram"><span class="blind">인스타그램</span></a></li>
+                <li><a href="javascript:void(0)" class="blog"><span class="blind">블로그</span></a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>

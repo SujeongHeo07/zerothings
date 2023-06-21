@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>zerothings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="zerothings">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="zerothings">
+    <meta property="og:description" content="zerothings">
+    <meta property="og:url" content="http://zerothings.com/">
+    <meta property="og:image" content="../image/logo.png">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/sub.css" />
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // cart에 num 값
+            var cartIndexNum = 0;
+            $(".cart_box").each(function() {
+                $(this).addClass("cart_" + cartIndexNum );
+                cartIndexNum = cartIndexNum + 1;
+            });
+        });
+        
+        // 주문 선택박스
+        $(document).on("click", "input[name='chk_no']", function(e) {
+            var chks = document.getElementsByName("chk_no");
+            var chksChecked = 0;
+	
+            for(var i=0; i<chks.length; i++) {
+                var cbox = chks[i];
+	   	
+                if(cbox.checked) {
+                    chksChecked++;
+                }
+	       }
+	
+	       if(chks.length == chksChecked){
+                $(".checkall").prop("checked", true);
+	       } else{
+                $(".checkall").prop("checked",false);
+	       }
+	
+        });
+        
+        // 전체 선택박스
+        function checkAll() {
+            if($(".checkall").is(':checked')) {
+                $("input[name='chk_no']").prop("checked", true);
+            } else {
+                $("input[name='chk_no']").prop("checked", false);
+            }
+        }
+        
+        // 수량 변경 및 상품 금액 계산
+        function CartNumChangeBtn(obj, type) {
+            var num = Number($(obj).parents(".cart_box").find(".product_num").val()); // 현재 수량
+            
+            if (type === "plus") {
+                if (num >= 1) {
+                    num += 1;
+                }
+            } else if (type === "minus") {
+                if (num > 1) {
+                    num -= 1;
+                }
+            }
+            
+            $(obj).parents(".cart_box").find(".product_num").val(num); // 변경된 수량 input
+            
+            // 변경된 가격 표시
+            let eachProduct = [7700, 1000, 19000, 13000]; // 가격배열
+            const cartIndex = $(obj).parents(".cart_box").index(); // 제품종류인덱스번호부여
+            var productTypeCount = $(".cart_box").length; // 제품종류개수
+            var totalCartNum = 0; // 총 구매금액 변수
+            
+            for (var i = 0; i < productTypeCount; i++) {
+                var totalNum;
+                if (cartIndex == i) {
+                    totalNum = num * eachProduct[i]; // 변경된 상품금액
+                }
+                
+                totalCartNum += Number($(".cart_" + i).find(".product_num").val() * eachProduct[i]);
+            }
+            
+            // 5만원 초과시 배송비 무료
+            if (totalCartNum < 50000) {
+                totalOrderNum = totalCartNum + 2500;
+                $("#deliveryPrice").text("2,500");
+            } else {
+                totalOrderNum = totalCartNum;
+                
+                $("#deliveryPrice").text("0");
+            }
+            
+            
+            var totalNumWrite = totalNum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","); // 변경된 상품금액 세자리수 표시
+            
+            $(obj).parents(".cart_box").find(".cart_price").text(totalNumWrite + "원");
+            
+            // 총 구매금액 변경
+            var totalNumWrite = totalCartNum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","); // 변경된 상품금액 세자리수 표시
+            
+            $("#productTotalPrice").text(totalNumWrite + "원");
+            
+            // 총 구매금액 + 배송료
+            var totalNumWrite = totalOrderNum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","); // 변경된 상품금액 세자리수 표시
+            $("#orderTotalPrice").text(totalNumWrite + "원");
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <div id="mask" style="display:none;"></div>
+    <!-- 모바일 네비게이션 -->
+    <nav class="mobile_menu_nav">
+        <div class="mobile_bg">
+            <h2 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h2>
+           
+            <form class="m_search_modal">
+                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+            </form>
+            
+            <ul class="depth1">
+                <li><a href="about.html">ABOUT</a>
+                    <ul class="depth2">
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </li>
+                <li><a href="shop.html">SHOP</a>
+                    <ul class="depth2">
+                        <li><a href="shop.html">BATH</a></li>
+                        <li><a href="shop.html)">KITCHEN</a></li>
+                        <li><a href="shop.html">LIFESTYLE</a></li>
+                        <li><a href="shop.html">VEGAN</a></li>
+                    </ul>
+                </li>
+                <li><a href="library.html">느린도서관</a></li>
+                <li><a href="empty_page.html">B2B</a></li>
+                <li><a href="qna.html">게시판</a>
+                    <ul class="depth2">
+                        <li><a href="qna.html">Q&amp;A</a></li>
+                        <li><a href="faq.html">자주묻는질문</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="mobile_division" onclick="menuClose()"></div>
+    </nav>
+    
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+           <div class="m_menu_btn"><button type="button" class="mobile_menu" onclick="menuOpen()"><span class="blind">메뉴</span></button></div>
+           <h1 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h1>
+            <nav class="menu">
+                <ul class="depth1">
+                    <li><a href="about.html">ABOUT</a>
+                        <ul class="depth2">
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html">SHOP</a>
+                        <ul class="depth2">
+                            <li><a href="shop.html">BATH</a></li>
+                            <li><a href="shop.html">KITCHEN</a></li>
+                            <li><a href="shop.html">LIFESTYLE</a></li>
+                            <li><a href="shop.html">GIFT SET</a></li>
+                            <li><a href="shop.html">VEGAN</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="library.html">느린도서관</a></li>
+                    <li><a href="empty_page.html">B2B</a></li>
+                    <li><a href="qna.html">게시판</a>
+                        <ul class="depth2">
+                            <li><a href="qna.html">Q&amp;A</a></li>
+                            <li><a href="faq.html">자주묻는질문</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="customer_service">
+                    <li>
+                        <button type="button" class="service search" onclick="searchToggle()"><span class="blind">검색버튼</span></button>
+                        <div class="search_modal" id="searchBox">
+                            <form>
+                                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="login.html" class="service user"><span class="blind">사용자</span></a></li>
+                    <li><a href="cart.html" class="service cart"><span class="blind">장바구니</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main_content">
+        
+        <section class="section_top pd_bottom cart_area">
+            
+            <h2 class="h2_title mb20">장바구니(4)</h2>
+            
+            <div class="container">
+                
+                <div class="cart_top">
+                    <span class="txt cart_checkbox"><input type="checkbox" class="chk checkall" name="chk_all" title="chk_all_check" onclick="checkAll()"/></span>
+                    <span class="txt product_info">상품정보</span>
+                    <span class="txt cart_point">적립금</span>
+                    <span class="txt quantity_area">수량</span>
+                    <span class="txt cart_price">가격</span>
+                    <span class="txt cart_del">
+                        <button type="button" class="btn normal">선택삭제</button>
+                    </span>
+                </div>
+                
+                <div class="cart_list">
+                <article class="cart_box">
+                    <div class="cart_checkbox"><input type="checkbox" class="chk" name="chk_no" title="chk_1" /></div>
+                   
+                    <a href="product.html" class="product_info">
+                        <img src="../image/bath/img_13.jpg" alt="고체치약" />
+                        <div class="text_box">
+                            <p class="text">[디어얼스] 고체치약 40정</p>
+                        </div>
+                    </a>
+                    
+                    <div class="cart_point">77P</div>
+                    
+                    <div class="quantity_area">
+                        <div class="quantity_box">
+                            <button type="button" class="num_btn minus" onclick="CartNumChangeBtn(this, 'minus')"><span class="blind">빼기</span></button>
+                            <input type="number" class="product_num" name="product_num" value="1" min="1" readonly />
+                            <button type="button" class="num_btn plus" onclick="CartNumChangeBtn(this, 'plus')"><span class="blind">덧셈</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart_price">7,700원</div>
+                    
+                    <div class="cart_del"><button type="button" class="close_btn"><span class="blind">삭제</span></button></div>
+                </article>
+                
+                <article class="cart_box">
+                    <div class="cart_checkbox"><input type="checkbox" class="chk" name="chk_no" title="chk_1" /></div>
+                   
+                    <a href="product.html" class="product_info">
+                        <img src="../image/new/img_08.jpg" alt="미니엽서" />
+                        <div class="text_box">
+                            <p class="text">[피팔레트] p.palette 토끼 미니 엽서 2종</p>
+                            <span class="txt">my special gift for you</span>
+                        </div>
+                    </a>
+                    
+                    <div class="cart_point">10P</div>
+                    
+                    <div class="quantity_area">
+                        <div class="quantity_box">
+                            <button type="button" class="num_btn minus" onclick="CartNumChangeBtn(this, 'minus')"><span class="blind">빼기</span></button>
+                            <input type="number" class="product_num" name="product_num" value="1" min="1" readonly />
+                            <button type="button" class="num_btn plus" onclick="CartNumChangeBtn(this, 'plus')"><span class="blind">덧셈</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart_price">1,000원</div>
+                    
+                    <div class="cart_del"><button type="button" class="close_btn"><span class="blind">삭제</span></button></div>
+                </article>
+                
+                <article class="cart_box">
+                    <div class="cart_checkbox"><input type="checkbox" class="chk" name="chk_no" title="chk_1" /></div>
+                   
+                    <a href="product.html" class="product_info">
+                        <img src="../image/kitchen/img_07.jpg" alt="허스키컵" />
+                        <div class="text_box">
+                            <p class="text">[HUSKEE] 허스키컵 8온스 (240ml) 내추럴/차콜</p>
+                            <span class="txt">색상 : 내추럴</span>
+                        </div>
+                    </a>
+                    
+                    <div class="cart_point">190P</div>
+                    
+                    <div class="quantity_area">
+                        <div class="quantity_box">
+                            <button type="button" class="num_btn minus" onclick="CartNumChangeBtn(this, 'minus')"><span class="blind">빼기</span></button>
+                            <input type="number" class="product_num" name="product_num" value="1" min="1" readonly />
+                            <button type="button" class="num_btn plus" onclick="CartNumChangeBtn(this, 'plus')"><span class="blind">덧셈</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart_price">19,000원</div>
+                    
+                    <div class="cart_del"><button type="button" class="close_btn"><span class="blind">삭제</span></button></div>
+                </article>
+                
+                <article class="cart_box">
+                    <div class="cart_checkbox"><input type="checkbox" class="chk" name="chk_no" title="chk_1" /></div>
+                   
+                    <a href="product.html" class="product_info">
+                        <img src="../image/kitchen/img_11.jpg" alt="손수건" />
+                        <div class="text_box">
+                            <p class="text">[소락] 휴대용와입스/손수건_ 옥스포드 디스펜서세트</p>
+                        </div>
+                    </a>
+                    
+                    <div class="cart_point">130P</div>
+                    
+                    <div class="quantity_area">
+                        <div class="quantity_box">
+                            <button type="button" class="num_btn minus" onclick="CartNumChangeBtn(this, 'minus')"><span class="blind">빼기</span></button>
+                            <input type="number" class="product_num" name="product_num" value="1" min="1" readonly />
+                            <button type="button" class="num_btn plus" onclick="CartNumChangeBtn(this, 'plus')"><span class="blind">덧셈</span></button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart_price">13,000원</div>
+                    
+                    <div class="cart_del"><button type="button" class="close_btn"><span class="blind">삭제</span></button></div>
+                </article>
+                
+                </div>
+                
+                <div class="cart_total_price">
+                    <span class="txt">
+                        총 구매금액:<span id="productTotalPrice">24,300원</span> + 배송료 <span id="deliveryPrice">2,500</span>원<span class="info_icon"><span class="hidden_box">50,000원이상 구매시 무료배송 입니다.</span></span> =
+                    </span>
+                    <strong class="order_total_price" id="orderTotalPrice">26,800원</strong>
+                </div>
+                
+                <div class="right_btn_box mt40">
+                    <a href="javascript:void(0)" class="btn common">선택상품 주문</a>
+                    <a href="javascript:void(0)" class="btn">전체상품 주문</a>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+    
+    <button type="button" class="up_btn" id="upBtn" onclick="upMove()"><span class="blind">상단이동</span>TOP</button>
+    
+    <footer class="footer">
+        <div class="container">
+            <ul class="company_info">
+                <li>상호: 제로띵스</li>
+                <li>대표: 이윤주</li>
+                <li>개인정보관리책임자: 이윤주</li>
+                <li>전화: 02-2263-6148</li>
+                <li>이메일: zerothings_shop@naver.com</li>
+                <li>주소: 서울 중구 수표로 32-1, 3층 제로띵스</li>
+                <li>사업자등록번호: 126-55-00563</li>
+                <li>통신판매: 제 2021-서울중구-1313 호</li>
+                <li>호스팅제공자: (주)식스샵</li>
+            </ul>
+            
+            <ul class="site_element">
+                <li><a href="javascript:void(0)">안전구매(에스크로) 서비스 가맹점</a></li>
+                <li><a href="javascript:void(0)">이용약관</a></li>
+                <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+                <li><a href="javascript:void(0)">사업자정보확인</a></li>
+            </ul>
+            
+            <ul class="sns_list">
+                <li><a href="javascript:void(0)" class="tel"><span class="blind">전화</span></a></li>
+                <li><a href="javascript:void(0)" class="mail"><span class="blind">메일</span></a></li>
+                <li><a href="javascript:void(0)" class="instagram"><span class="blind">인스타그램</span></a></li>
+                <li><a href="javascript:void(0)" class="blog"><span class="blind">블로그</span></a></li>
+            </ul>
+        </div>
+    </footer>
+    
+</body>
+</html>

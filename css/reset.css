@@ -1,0 +1,151 @@
+@charset "UTF-8";
+                        
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    min-height:100%;
+}
+body {
+    font-size:16px; 
+    font-family: 'AppleSDGothicNeo';
+    color:var(--main-font-color); 
+/*    -webkit-overflow-scrolling: touch;*/
+}
+table, th, td, input, select, button, textarea, pre {
+    font:inherit; 
+    color:inherit;
+}
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, select, button, textarea, p, blockquote, table, th, td, a {
+    color:var(--main-font-color);
+    font-family: 'AppleSDGothicNeo';
+}
+ol, ul {
+    list-style:none;
+}
+img, fieldset {
+    border:0;
+}
+img {
+    vertical-align:middle;
+}
+a {
+    color:var(--main-font-color);
+    text-decoration:none;
+}
+table {
+    width:100%;
+    border-spacing:0; 
+    border-collapse:collapse; 
+    border:0;
+}
+th, td {
+    word-break:break-all; 
+    word-wrap:break-word;
+}
+button {
+    cursor:pointer;
+}
+input, button, textarea {
+    background:0;
+    border:0; 
+    border-radius:0;
+}
+textarea {
+    resize:none;
+}
+input, button, select, textarea {
+    vertical-align:middle;
+    outline:none;
+    webkit-appearance: none;
+    appearance: none;
+    color:var(--main-font-color);
+    box-sizing:border-box;
+    font-family: 'AppleSDGothicNeo';
+}
+address, caption, cite, code, dfn, em, var {
+    font-style:normal;
+}
+hr {
+    clear:both;
+    display:none;
+}
+blockquote, q {
+    quotes:none;
+}
+abbr, acronym {
+    border:0;
+}
+legend, caption {
+    position:absolute;
+    width:1px;
+    height:1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+    display:block;
+}
+h1, h2, h3, h4, h5, h6, strong, b {
+    font-weight:600;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    width: 14px; 
+    height: 14px; 
+    background: url("../image/common/cross.svg") 50% 50% no-repeat;
+    cursor: pointer;
+}
+
+.blind {
+    position:absolute;
+    width:1px;
+    height:1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* 간격 */
+.mt0 {margin-top:0px;}
+.mt5 {margin-top:5px;}
+.mt10 {margin-top:10px;}
+.mt15 {margin-top:15px;}
+.mt20 {margin-top:20px;}
+.mt25 {margin-top:25px;}
+.mt30 {margin-top:30px;}
+.mt35 {margin-top:35px;}
+.mt40 {margin-top:40px;}
+.mt45 {margin-top:45px;}
+.mt50 {margin-top:50px;}
+.mt55 {margin-top:40px;}
+.mt60 {margin-top:60px;}
+.ml5 {margin-left:5px;}
+.ml10 {margin-left:10px;}
+.ml15 {margin-left:15px;}
+.ml20 {margin-left:20px;}
+.mr5 {margin-right:5px;}
+.mr10 {margin-right:10px;}
+.mr15 {margin-right:15px;}
+.mr20 {margin-right:20px;}
+.mb10 {margin-bottom:10px;}
+.mb20 {margin-bottom:20px;}
+.mb30 {margin-bottom:30px;}
+.mb40 {margin-bottom:40px;}
+.mb50 {margin-bottom:50px;}
+.pl10 {padding-left:10px;}
+.pl20 {padding-left:20px;}
+.pl30 {padding-left:30px;}
+
+@media all and (max-width:840px) {
+    html, 
+    body {font-size:14px;}
+}

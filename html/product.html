@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>zerothings</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="zerothings">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="zerothings">
+    <meta property="og:description" content="zerothings">
+    <meta property="og:url" content="http://zerothings.com/">
+    <meta property="og:image" content="../image/logo.png">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/sub.css" />
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            // 헤더
+            $(".header").css("position", "relative");
+            
+        });
+        
+        // 상세 탭 이동
+        function tabMove(seq) {
+            var offset = $("#productCon_" + seq).offset();
+            $('html, body').animate({scrollTop : offset.top - 50}, 600);
+        };
+        
+        // 리뷰 텍스트 전체 보기
+        function reviewOpen(obj) {
+            $(obj).parent(".review_box").toggleClass("open");
+            $(obj).parent(".review_box").siblings(".review_box").removeClass("open");
+        }
+        
+        // 수량 변경 및 상품 금액 계산
+        function numChangeBtn(type) {
+            var num = Number($("#productNumInput").val()); // 현재 수량
+            
+            if (type === "plus") {
+                if (num >= 1) {
+                    num += 1;
+                }
+            } else if (type === "minus") {
+                if (num > 1) {
+                    num -= 1;
+                }
+            }
+            
+            $("#productNumInput").val(num); // 변경된 수량 input
+            $("#totalNum").text(num + "개"); // 변경된 총수량
+            
+            var totalNum = num * 15900; // 변경된 상품금액
+            var totalNumWrite = totalNum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","); // 세자리수 표시
+            
+            $("#totalPrice").text(totalNumWrite + "원");  // 변경된 총상품금액
+        }
+        
+    </script>
+</head>
+<body onload="popupShow('product');">
+    <div id="mask" style="display:none;"></div>
+    <!-- 모바일 네비게이션 -->
+    <nav class="mobile_menu_nav">
+        <div class="mobile_bg">
+            <h2 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h2>
+           
+            <form class="m_search_modal">
+                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+            </form>
+            
+            <ul class="depth1">
+                <li><a href="about.html">ABOUT</a>
+                    <ul class="depth2">
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </li>
+                <li><a href="shop.html">SHOP</a>
+                    <ul class="depth2">
+                        <li><a href="shop.html">BATH</a></li>
+                        <li><a href="shop.html)">KITCHEN</a></li>
+                        <li><a href="shop.html">LIFESTYLE</a></li>
+                        <li><a href="shop.html">VEGAN</a></li>
+                    </ul>
+                </li>
+                <li><a href="library.html">느린도서관</a></li>
+                <li><a href="empty_page.html">B2B</a></li>
+                <li><a href="qna.html">게시판</a>
+                    <ul class="depth2">
+                        <li><a href="qna.html">Q&amp;A</a></li>
+                        <li><a href="faq.html">자주묻는질문</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="mobile_division" onclick="menuClose()"></div>
+    </nav>
+    
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="container">
+           <div class="m_menu_btn"><button type="button" class="mobile_menu" onclick="menuOpen()"><span class="blind">메뉴</span></button></div>
+           <h1 class="logo"><a href="main.html"><img src="../image/logo.png" alt="zerothings" /></a></h1>
+            <nav class="menu">
+                <ul class="depth1">
+                    <li><a href="about.html">ABOUT</a>
+                        <ul class="depth2">
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html">SHOP</a>
+                        <ul class="depth2">
+                            <li><a href="shop.html">BATH</a></li>
+                            <li><a href="shop.html">KITCHEN</a></li>
+                            <li><a href="shop.html">LIFESTYLE</a></li>
+                            <li><a href="shop.html">GIFT SET</a></li>
+                            <li><a href="shop.html">VEGAN</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="library.html">느린도서관</a></li>
+                    <li><a href="empty_page.html">B2B</a></li>
+                    <li><a href="qna.html">게시판</a>
+                        <ul class="depth2">
+                            <li><a href="qna.html">Q&amp;A</a></li>
+                            <li><a href="faq.html">자주묻는질문</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="customer_service">
+                    <li>
+                        <button type="button" class="service search" onclick="searchToggle()"><span class="blind">검색버튼</span></button>
+                        <div class="search_modal" id="searchBox">
+                            <form>
+                                <input type="search" class="search_text" title="검색창" placeholder="검색어를 입력하세요."/>
+                                <button type="submit" class="search_btn"><span class="blind">검색</span></button>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a href="login.html" class="service user"><span class="blind">사용자</span></a></li>
+                    <li><a href="cart.html" class="service cart"><span class="blind">장바구니</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        
+        <section class="section_top">
+           
+            <h2 class="blind">제품 상세</h2>
+            <div class="container">
+               
+                <div class="product_view">
+                    <span class="img_box"><img src="../image/liftstyle/img_10.jpg" alt="업사이클링파우치" /></span>
+                    
+                    <div class="text_box">
+                        <span class="brand">[project1907]</span>
+                        <p class="product_name">업사이클링 파우치(라운드)</p>
+                        <span class="product_price">15,000원</span>
+                        <p class="text">
+                            size : 가로25cm X 세로15cm X 폭7cm <br/>
+                            material : Platex 100% <br/>
+                            washing tip : 미온수에서 중성세제를 이용한 손빨래 권장
+                        </p>
+                        <table class="common_table">
+                            <tbody>
+                                <tr>
+                                    <th>배송지</th>
+                                    <td> 2,700원 (35,000원 이상 구매 시 무료)<br/>제주 및 도서 산간 3,000원 추가</td>
+                                </tr>
+                                <tr>
+                                    <th>색상선택</th>
+                                    <td>
+                                        <select class="select">
+                                            <option value="">선택하세요.</option>
+                                            <option value="">오이스터</option>
+                                            <option value="">베이지</option>
+                                            <option value="">그레이그린</option>
+                                            <option value="">카키브라운</option>
+                                            <option value="">네이비</option>
+                                            <option value="">블랙</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>수량</th>
+                                    <td>
+                                        <div class="quantity_box">
+                                            <button type="button" class="num_btn minus" onclick="numChangeBtn('minus')"><span class="blind">빼기</span></button>
+                                            <input type="number" class="product_num" id="productNumInput" name="product_num" value="1" min="1" readonly />
+                                            <button type="button" class="num_btn plus" onclick="numChangeBtn('plus')"><span class="blind">덧셈</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <table class="common_table type_price">
+                            <tbody>
+                                <tr>
+                                    <th>주문 수량</th>
+                                    <td id="totalNum">1개</td>
+                                </tr>
+                                <tr>
+                                    <th>총 상품 금액</th>
+                                    <td id="totalPrice">15,900원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <label for="like_check" class="btn common like_btn"><span class="blind">찜</span><input type="checkbox" name="product_like" id="like_check" /></label>
+                        <button type="button" class="btn common">장바구니</button>
+                        <button type="button" class="btn">구매하기</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="section pd_bottom">
+            <div class="container">
+                <ul class="product_nav">
+                    <li><a href="javascript:void" class="active" onclick="tabMove(1)">제품 상세</a></li>
+                    <li><a href="javascript:void" onclick="tabMove(2)">관련 상품</a></li>
+                    <li><a href="javascript:void" onclick="tabMove(3)">제품 후기</a></li>
+                </ul>
+                
+                <div class="product_detail" id="productCon_1">
+                    <img src="../image/sub/view_delivery_1.jpg" alt="배송주의사항1"/>
+                    <img src="../image/liftstyle/img_10_view_1.jpg" alt="상세1" />
+                    <img src="../image/liftstyle/img_10_view_2.jpg" alt="상세2" />
+                    <img src="../image/liftstyle/img_10_view_3.jpg" alt="상세3" />
+                    <img src="../image/liftstyle/img_10_view_4.jpg" alt="상세4" />
+                    <img src="../image/liftstyle/img_10_view_6.jpg" alt="상세6" />
+                    <img src="../image/liftstyle/img_10_view_7.jpg" alt="상세7" />
+                    <img src="../image/liftstyle/img_10_view_8.jpg" alt="상세8" />
+                    <img src="../image/liftstyle/img_10_view_9.jpg" alt="상세9" />
+                    <img src="../image/liftstyle/img_10_view_10.jpg" alt="상세10" />
+                    <img src="../image/liftstyle/img_10_view_12.jpg" alt="상세11" />
+                    <img src="../image/liftstyle/img_10_view_11.jpg" alt="상세12" />
+                    <img src="../image/liftstyle/img_10_view_13.jpg" alt="상세13" />
+                    <img src="../image/liftstyle/img_10_view_14.jpg" alt="상세14" />
+                    <img src="../image/liftstyle/img_10_view_15.jpeg" alt="상세15" />
+                    <img src="../image/liftstyle/img_10_view_16.jpg" alt="상세16" />
+                    <img src="../image/liftstyle/img_10_view_17.jpg" alt="상세17" />
+                    <img src="../image/liftstyle/img_10_view_18.jpg" alt="상세18" />
+                    <img src="../image/sub/view_delivery_2.jpg" alt="배송주의사항2"/>
+                </div>
+                
+                <div class="product_detail"  id="productCon_2">
+                    <h3 class="product_title">관련 상품</h3>
+                    
+                    <ul class="product_list grid itme_3">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span class="img_box"><img src="../image/liftstyle/img_11.jpg" alt="펜슬 파우치1" /><img src="../image/liftstyle/img_11_1.jpg" alt="펜슬 파우치1_1" /></span>
+                                <div class="text_box">
+                                    <p class="product_name">[project1907] 업사이클링 펜슬 파우치_제로웨이스트</p>
+                                    <strong class="product_price">9,000원</strong>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <span class="img_box"><img src="../image/liftstyle/img_12.jpg" alt="플랫 파우치" /></span>
+                                <div class="text_box">
+                                    <p class="product_name">[project1907] 업사이클링 플랫 파우치_제로웨이스트</p>
+                                    <strong class="product_price">12,000원</strong>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="product_detail"  id="productCon_3">
+                    <h3 class="product_title">제품 후기</h3>
+                    
+                    <strong class="review_total_grade">4.7/5</strong>
+                    <span class="review_total_count">(3개 후기)</span>
+                    
+                    <article class="review_box">
+                        <div class="text_wrapper" onclick="reviewOpen(this)">
+                            <div class="review_top">
+                                <ul class="star_list">
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                    <li class="star empty"></li>
+                                </ul>
+                                <span class="user_name">아몬드</span>
+                                <span class="writing_date">2022.02.20</span>
+                            </div>
+                            <div class="text_box">오염도 없이 깔끔하게 잘 도착했습니다 그런데 지퍼쪽에 박음질이 어설프네요... 그것빼고는 전부 만족합니다</div>
+                        </div>
+                        
+                        <div class="img_box"><img src="../image/liftstyle/img_10.jpg" alt="리뷰_이미지1" /></div>
+                    </article>
+                    
+                    <article class="review_box">
+                        <div class="text_wrapper" onclick="reviewOpen(this)">
+                            <div class="review_top">
+                                <ul class="star_list">
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                </ul>
+                                <span class="user_name">이상한나라의솜사탕</span>
+                                <span class="writing_date">2022.02.20</span>
+                            </div>
+                            <div class="text_box">하단이 라운드처리 되어 있어서 부피가 큰 제품도 생각보다 잘들어갑니다~ 가벼운편이라 덕분에 여름에 썬크림이나 로션도 잘 들고다녔어요 컬러는 화면에 보이는 것보다 조금 더 어두워요</div>
+                        </div>
+                    </article>
+                    
+                    <article class="review_box">
+                        <div class="text_wrapper" onclick="reviewOpen(this)">
+                            <div class="review_top">
+                                <ul class="star_list">
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                    <li class="star full"></li>
+                                </ul>
+                                <span class="user_name">커피마시는중</span>
+                                <span class="writing_date">2022.02.20</span>
+                            </div>
+                            <div class="text_box">플라스틱으로 만들어졌다고 해서 어떤 질감일까 걱정 많이 했는데 일반 천과 다름없이 부드럽고 쫀쫀한 느낌이에요 튼튼해서 오래 사용할 수 있을것 같아서 만족스럽습니다! 재구매의사 있고요 카키브라운으로 주문했는데, 생각보다 어둡게 나와서 다음번에는 좀 더 밝은 색으로 사서 주변분들에게 선물을 드릴까 고민중입니다 환경에도 소비자에게도 좋은 제품이라서 마음편히 구매할 수 있다는게 좋네요~</div>
+                        </div>
+                        
+                        <div class="img_box"><img src="../image/liftstyle/img_10_view_4.jpg" alt="리뷰_이미지2" /></div>
+                    </article>
+                    
+                    <div class="right_btn_box">
+                        <button type="button" class="btn">후기 작성</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+    
+    <button type="button" class="up_btn" id="upBtn" onclick="upMove()"><span class="blind">상단이동</span>TOP</button>
+    
+    <footer class="footer">
+        <div class="container">
+            <ul class="company_info">
+                <li>상호: 제로띵스</li>
+                <li>대표: 이윤주</li>
+                <li>개인정보관리책임자: 이윤주</li>
+                <li>전화: 02-2263-6148</li>
+                <li>이메일: zerothings_shop@naver.com</li>
+                <li>주소: 서울 중구 수표로 32-1, 3층 제로띵스</li>
+                <li>사업자등록번호: 126-55-00563</li>
+                <li>통신판매: 제 2021-서울중구-1313 호</li>
+                <li>호스팅제공자: (주)식스샵</li>
+            </ul>
+            
+            <ul class="site_element">
+                <li><a href="javascript:void(0)">안전구매(에스크로) 서비스 가맹점</a></li>
+                <li><a href="javascript:void(0)">이용약관</a></li>
+                <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+                <li><a href="javascript:void(0)">사업자정보확인</a></li>
+            </ul>
+            
+            <ul class="sns_list">
+                <li><a href="javascript:void(0)" class="tel"><span class="blind">전화</span></a></li>
+                <li><a href="javascript:void(0)" class="mail"><span class="blind">메일</span></a></li>
+                <li><a href="javascript:void(0)" class="instagram"><span class="blind">인스타그램</span></a></li>
+                <li><a href="javascript:void(0)" class="blog"><span class="blind">블로그</span></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
