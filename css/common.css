@@ -430,8 +430,8 @@ header
     box-sizing: border-box;
 }
 .btn:hover {
-    border-color:#afe1a0;
-    background:#afe1a0;
+    border-color:#65895a;
+    background:#65895a;
 }
 .btn.common {
     background:#fff;
